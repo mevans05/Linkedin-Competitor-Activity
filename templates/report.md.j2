@@ -14,10 +14,12 @@ New Content section where possible — e.g. "likely driven by the viral
 
 ## Quantitative Snapshot — Company Pages
 
-| Company | Followers | WoW Δ | WoW % | Engagement Rate | WoW Δ (pp) | Posts This Week |
-|---|---:|---:|---:|---:|---:|---:|
+*Values are this week's period count; parentheses show WoW change vs. the prior period.*
+
+| Company | New Followers | Reactions | Comments | Posts |
+|---|---:|---:|---:|---:|
 {% for row in company_rows -%}
-| {{ row.name }} | {{ row.followers }} | {{ row.followers_abs }} | {{ row.followers_pct }} | {{ row.engagement_rate }} | {{ row.engagement_rate_abs }} | {{ row.posts_count }} |
+| {{ row.name }} | {{ row.new_followers }} | {{ row.reactions }} | {{ row.comments }} | {{ row.posts_count }} |
 {% endfor %}
 
 ### Significant Movements This Week
@@ -39,7 +41,7 @@ _No changes cleared the significance thresholds configured in `config/thresholds
 
 {% if group.posts -%}
 {% for p in group.posts -%}
-- **{{ p.date }}** [{{ p.type }}] {{ p.excerpt }} — 👍 {{ p.likes }} · 💬 {{ p.comments }} · 🔁 {{ p.shares }}{% if p.url %} — [link]({{ p.url }}){% endif +%}
+- {% if p.date %}**{{ p.date }}** {% endif %}[{{ p.type }}] {{ p.excerpt }}{% if p.has_engagement %} — 👍 {{ p.likes }} · 💬 {{ p.comments }} · 🔁 {{ p.shares }}{% endif %}{% if p.cta %} — _CTA: {{ p.cta }}_{% endif %}{% if p.url %} — [link]({{ p.url }}){% endif +%}
 
 {% endfor %}
 {% else -%}
@@ -54,7 +56,7 @@ _No net-new posts indexed this week._
 
 {% if group.posts -%}
 {% for p in group.posts -%}
-- **{{ p.date }}** [{{ p.type }}] {{ p.excerpt }} — 👍 {{ p.likes }} · 💬 {{ p.comments }} · 🔁 {{ p.shares }}{% if p.url %} — [link]({{ p.url }}){% endif +%}
+- {% if p.date %}**{{ p.date }}** {% endif %}[{{ p.type }}] {{ p.excerpt }}{% if p.has_engagement %} — 👍 {{ p.likes }} · 💬 {{ p.comments }} · 🔁 {{ p.shares }}{% endif %}{% if p.cta %} — _CTA: {{ p.cta }}_{% endif %}{% if p.url %} — [link]({{ p.url }}){% endif +%}
 
 {% endfor %}
 {% else -%}
@@ -101,5 +103,7 @@ where to openly disagree with a competitor's take. Ground this in
 <!-- /QUALITATIVE:ZT_POV -->
 
 ---
-*Data sourced via Coefficient. Significance thresholds configurable in
-`config/thresholds.yaml`. Competitor roster in `config/competitors.yaml`.*
+*Analytics sourced via Coefficient (LinkedIn competitor comparison table).
+Post content sourced via manual weekly export. Significance thresholds
+configurable in `config/thresholds.yaml`. Competitor roster in
+`config/competitors.yaml`.*

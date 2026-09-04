@@ -1,6 +1,6 @@
 ---
 name: weekly-linkedin-audit
-description: Generate the weekly LinkedIn competitor audit and summary report — ingests the week's Coefficient exports (analytics + posts), computes WoW deltas, indexes net-new posts for tracked Company Pages and leadership profiles, then writes the qualitative analysis (brand/leader summaries, content themes, Zilker Trail POV) and publishes the report. Use when the user asks to run, generate, or update the weekly LinkedIn competitor audit/report, or invokes /weekly-linkedin-audit.
+description: Generate the weekly LinkedIn competitor audit and summary report — ingests the week's Coefficient analytics export and manually-gathered post content, computes WoW deltas, indexes net-new posts for tracked Company Pages and leadership profiles, then writes the qualitative analysis (brand/leader summaries, content themes, Zilker Trail POV) and publishes the report. Use when the user asks to run, generate, or update the weekly LinkedIn competitor audit/report, or invokes /weekly-linkedin-audit.
 ---
 
 # Weekly LinkedIn Competitor Audit
@@ -20,21 +20,35 @@ the script output.
 
 ## Inputs this expects
 
-Two files should exist for the target week before running:
-- `data/raw/analytics/<week>.csv` (or `.xlsx`) — the Coefficient export of
-  LinkedIn Analytics → Competitors data (follower counts, engagement).
-- `data/raw/posts/<week>.csv` (or `.xlsx`) — the Coefficient export of
-  Company Page and leadership profile posts for the week.
+Two different kinds of input for the target week, from two different
+sources — LinkedIn's own Competitors analytics only exposes aggregate counts
+for pages you don't administer and doesn't cover individual profiles at all,
+so there's no single automated feed for both halves:
 
-The exact filename doesn't matter (the ingest scripts scan the whole
-directory for anything not yet ingested) — what matters is the file is
-dropped into the right folder before this skill runs. Column headers don't
-need to match exactly either; `config/column_mappings.yaml` aliases common
-header variants to the canonical fields.
+- `data/raw/analytics/<week>.csv` (or `.xlsx`) — the Coefficient sync of
+  LinkedIn's Analytics → Competitors comparison table (New Followers, Posts,
+  Comments, Reactions). Filename should be the period-end date — the real
+  export has one date for the whole table, not a per-row column, so ingest
+  falls back to parsing the date from the filename.
+- `data/raw/posts/<week>.docx` (or `.txt`) — post content for tracked
+  Company Pages and leaders, gathered manually each week (someone visits
+  each page/profile and pastes what's new). See `docs/RUNBOOK.md` for the
+  exact expected block format (`Competitor:`/`Leader:` header, then
+  `Post URL:`/`Post Text:`/`Post Format:`/`CTA:` per post) — the parser is
+  specific about this structure. CSV/XLSX with the canonical columns also
+  works if a richer source (with engagement counts, dates) becomes
+  available later.
+
+The exact filename doesn't matter beyond the analytics date convention above
+(the ingest scripts scan the whole directory for anything not yet ingested).
+It's fine for the posts file to include posts from prior weeks too — dedup
+against `data/state/seen_posts.json` handles that automatically, so err on
+the side of pasting more rather than trying to pre-filter to "just the new
+ones."
 
 **If one or both files are missing**, tell the user which file(s) are needed
 and where to put them (`data/raw/analytics/` and `data/raw/posts/`), point
-them to `docs/RUNBOOK.md` for the expected schema, and stop — do not
+them to `docs/RUNBOOK.md` for the expected format, and stop — do not
 fabricate data or run the pipeline on a partial week.
 
 ## Steps
@@ -107,8 +121,11 @@ fabricate data or run the pipeline on a partial week.
 
 If the user wants this to run automatically every week (e.g. via the `loop`
 skill or a scheduled trigger), the input-file check in step 1 is the natural
-gate — the skill should no-op with a clear message if the week's Coefficient
-exports haven't landed yet, rather than erroring or fabricating a report.
+gate — the skill should no-op with a clear message if the week's analytics
+export and post digest haven't both landed yet, rather than erroring or
+fabricating a report. The manual post-gathering step (there's no automated
+feed for it) means this can't be fully unattended — someone still needs to
+paste the week's posts before the skill can run end to end.
 
 If a competitor is added, removed, or renamed, update
 `config/competitors.yaml` — the `key` field must stay stable even if

@@ -5,14 +5,19 @@
 # actual header text here as another alias. Matching is case-insensitive and
 # ignores surrounding whitespace.
 
+# Matches the real Coefficient "LinkedIn Pages Import" competitor comparison
+# table: Page | New Followers | Posts | Comments | Comments per day |
+# Reactions, for a configurable period (set the underlying LinkedIn Analytics
+# comparison window to 7 days before each weekly sync so this is a clean
+# week, not a rolling 30-day number).
 analytics:
-  company:        ["company", "page name", "page", "organization", "competitor"]
-  date:           ["date", "week", "week ending", "snapshot date", "period end"]
-  followers_total: ["followers_total", "total followers", "followers"]
-  followers_new:   ["followers_new", "new followers", "follower growth", "net new followers"]
-  engagement_total: ["engagement_total", "total engagement", "engagements"]
-  engagement_rate:  ["engagement_rate", "engagement rate", "engagement rate (%)"]
+  company:          ["company", "page name", "page", "organization", "competitor"]
+  date:             ["date", "week", "week ending", "snapshot date", "period end", "end date"]
+  new_followers:    ["new_followers", "new followers", "follower growth", "net new followers"]
   posts_count:      ["posts_count", "posts", "post count", "posts published"]
+  comments_total:   ["comments_total", "comments", "comment count"]
+  comments_per_day: ["comments_per_day", "comments per day"]
+  reactions_total:  ["reactions_total", "reactions", "total reactions"]
 
 posts:
   post_id:      ["post_id", "post id", "id", "activity id", "urn"]
@@ -27,3 +32,4 @@ posts:
   shares:       ["shares", "reposts", "share count"]
   reactions_total: ["reactions_total", "total reactions", "total engagement"]
   hashtags:     ["hashtags", "tags"]
+  cta:          ["cta", "call to action", "call-to-action"]

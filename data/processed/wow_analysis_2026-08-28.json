@@ -3,33 +3,40 @@
   "companies": {
     "accenture": {
       "company_name": "Accenture",
-      "prior_date": null,
+      "prior_date": "2026-08-21",
       "metrics": {
-        "followers_total": {
-          "prior": null,
-          "current": 15000000,
-          "abs_change": null,
-          "pct_change": null,
+        "new_followers": {
+          "prior": 114355,
+          "current": 114800,
+          "abs_change": 445,
+          "pct_change": 0.3891390844300643,
           "flagged": false
         },
-        "engagement_total": {
-          "prior": null,
-          "current": 45000,
-          "abs_change": null,
-          "pct_change": null,
+        "reactions_total": {
+          "prior": 33682,
+          "current": 33900,
+          "abs_change": 218,
+          "pct_change": 0.6472299744670744,
           "flagged": false
         },
-        "engagement_rate": {
-          "prior": null,
-          "current": 0.3,
-          "abs_change": null,
-          "pct_change": null,
+        "comments_total": {
+          "prior": 483,
+          "current": 470,
+          "abs_change": -13,
+          "pct_change": -2.691511387163561,
           "flagged": false
         },
         "posts_count": {
-          "prior": null,
-          "current": 8,
-          "abs_change": null,
+          "prior": 18,
+          "current": 17,
+          "abs_change": -1,
+          "pct_change": null,
+          "flagged": false
+        },
+        "comments_per_day": {
+          "prior": 16.0,
+          "current": 67.1,
+          "abs_change": 51.099999999999994,
           "pct_change": null,
           "flagged": false
         }
@@ -37,33 +44,40 @@
     },
     "slalom-consulting": {
       "company_name": "Slalom Consulting",
-      "prior_date": null,
+      "prior_date": "2026-08-21",
       "metrics": {
-        "followers_total": {
-          "prior": null,
-          "current": 250000,
-          "abs_change": null,
-          "pct_change": null,
+        "new_followers": {
+          "prior": 4448,
+          "current": 4600,
+          "abs_change": 152,
+          "pct_change": 3.41726618705036,
           "flagged": false
         },
-        "engagement_total": {
-          "prior": null,
-          "current": 3200,
-          "abs_change": null,
-          "pct_change": null,
+        "reactions_total": {
+          "prior": 1755,
+          "current": 1820,
+          "abs_change": 65,
+          "pct_change": 3.7037037037037033,
           "flagged": false
         },
-        "engagement_rate": {
-          "prior": null,
-          "current": 1.28,
-          "abs_change": null,
-          "pct_change": null,
+        "comments_total": {
+          "prior": 55,
+          "current": 60,
+          "abs_change": 5,
+          "pct_change": 9.090909090909092,
           "flagged": false
         },
         "posts_count": {
-          "prior": null,
-          "current": 5,
-          "abs_change": null,
+          "prior": 21,
+          "current": 20,
+          "abs_change": -1,
+          "pct_change": null,
+          "flagged": false
+        },
+        "comments_per_day": {
+          "prior": 2.0,
+          "current": 8.6,
+          "abs_change": 6.6,
           "pct_change": null,
           "flagged": false
         }
@@ -71,33 +85,40 @@
     },
     "deloitte": {
       "company_name": "Deloitte",
-      "prior_date": null,
+      "prior_date": "2026-08-21",
       "metrics": {
-        "followers_total": {
-          "prior": null,
-          "current": 15500000,
-          "abs_change": null,
-          "pct_change": null,
+        "new_followers": {
+          "prior": 264263,
+          "current": 265500,
+          "abs_change": 1237,
+          "pct_change": 0.46809428486015825,
           "flagged": false
         },
-        "engagement_total": {
-          "prior": null,
-          "current": 52000,
-          "abs_change": null,
-          "pct_change": null,
+        "reactions_total": {
+          "prior": 170144,
+          "current": 172000,
+          "abs_change": 1856,
+          "pct_change": 1.0908406996426556,
           "flagged": false
         },
-        "engagement_rate": {
-          "prior": null,
-          "current": 0.34,
-          "abs_change": null,
-          "pct_change": null,
+        "comments_total": {
+          "prior": 1974,
+          "current": 2050,
+          "abs_change": 76,
+          "pct_change": 3.850050658561297,
           "flagged": false
         },
         "posts_count": {
-          "prior": null,
-          "current": 10,
-          "abs_change": null,
+          "prior": 1000,
+          "current": 999,
+          "abs_change": -1,
+          "pct_change": null,
+          "flagged": false
+        },
+        "comments_per_day": {
+          "prior": 64.0,
+          "current": 292.9,
+          "abs_change": 228.89999999999998,
           "pct_change": null,
           "flagged": false
         }
@@ -105,33 +126,40 @@
     },
     "kpmg": {
       "company_name": "KPMG",
-      "prior_date": null,
+      "prior_date": "2026-08-21",
       "metrics": {
-        "followers_total": {
-          "prior": null,
-          "current": 3000000,
-          "abs_change": null,
-          "pct_change": null,
+        "new_followers": {
+          "prior": 71162,
+          "current": 72500,
+          "abs_change": 1338,
+          "pct_change": 1.8802169697310362,
           "flagged": false
         },
-        "engagement_total": {
-          "prior": null,
-          "current": 9000,
-          "abs_change": null,
-          "pct_change": null,
+        "reactions_total": {
+          "prior": 7373,
+          "current": 7600,
+          "abs_change": 227,
+          "pct_change": 3.0788010307880103,
           "flagged": false
         },
-        "engagement_rate": {
-          "prior": null,
-          "current": 0.3,
-          "abs_change": null,
-          "pct_change": null,
+        "comments_total": {
+          "prior": 152,
+          "current": 140,
+          "abs_change": -12,
+          "pct_change": -7.894736842105263,
           "flagged": false
         },
         "posts_count": {
-          "prior": null,
-          "current": 6,
-          "abs_change": null,
+          "prior": 13,
+          "current": 14,
+          "abs_change": 1,
+          "pct_change": null,
+          "flagged": false
+        },
+        "comments_per_day": {
+          "prior": 5.0,
+          "current": 20.0,
+          "abs_change": 15.0,
           "pct_change": null,
           "flagged": false
         }
@@ -139,33 +167,40 @@
     },
     "pwc": {
       "company_name": "PwC",
-      "prior_date": null,
+      "prior_date": "2026-08-21",
       "metrics": {
-        "followers_total": {
-          "prior": null,
-          "current": 6000000,
-          "abs_change": null,
-          "pct_change": null,
+        "new_followers": {
+          "prior": 90490,
+          "current": 91200,
+          "abs_change": 710,
+          "pct_change": 0.784617084760747,
           "flagged": false
         },
-        "engagement_total": {
-          "prior": null,
-          "current": 18000,
-          "abs_change": null,
-          "pct_change": null,
+        "reactions_total": {
+          "prior": 12632,
+          "current": 12900,
+          "abs_change": 268,
+          "pct_change": 2.121595946801773,
           "flagged": false
         },
-        "engagement_rate": {
-          "prior": null,
-          "current": 0.3,
-          "abs_change": null,
-          "pct_change": null,
+        "comments_total": {
+          "prior": 392,
+          "current": 410,
+          "abs_change": 18,
+          "pct_change": 4.591836734693878,
           "flagged": false
         },
         "posts_count": {
-          "prior": null,
-          "current": 7,
-          "abs_change": null,
+          "prior": 40,
+          "current": 39,
+          "abs_change": -1,
+          "pct_change": null,
+          "flagged": false
+        },
+        "comments_per_day": {
+          "prior": 13.0,
+          "current": 58.6,
+          "abs_change": 45.6,
           "pct_change": null,
           "flagged": false
         }
@@ -173,33 +208,40 @@
     },
     "mckinsey": {
       "company_name": "McKinsey & Company",
-      "prior_date": null,
+      "prior_date": "2026-08-21",
       "metrics": {
-        "followers_total": {
-          "prior": null,
-          "current": 10000000,
-          "abs_change": null,
-          "pct_change": null,
+        "new_followers": {
+          "prior": 59613,
+          "current": 60100,
+          "abs_change": 487,
+          "pct_change": 0.8169359032425814,
           "flagged": false
         },
-        "engagement_total": {
-          "prior": null,
-          "current": 61000,
-          "abs_change": null,
-          "pct_change": null,
+        "reactions_total": {
+          "prior": 59817,
+          "current": 60200,
+          "abs_change": 383,
+          "pct_change": 0.6402862062624337,
           "flagged": false
         },
-        "engagement_rate": {
-          "prior": null,
-          "current": 0.61,
-          "abs_change": null,
-          "pct_change": null,
+        "comments_total": {
+          "prior": 3464,
+          "current": 3400,
+          "abs_change": -64,
+          "pct_change": -1.8475750577367205,
           "flagged": false
         },
         "posts_count": {
-          "prior": null,
-          "current": 9,
-          "abs_change": null,
+          "prior": 111,
+          "current": 110,
+          "abs_change": -1,
+          "pct_change": null,
+          "flagged": false
+        },
+        "comments_per_day": {
+          "prior": 112.0,
+          "current": 485.7,
+          "abs_change": 373.7,
           "pct_change": null,
           "flagged": false
         }
@@ -207,33 +249,40 @@
     },
     "apply-digital": {
       "company_name": "Apply Digital",
-      "prior_date": null,
+      "prior_date": "2026-08-21",
       "metrics": {
-        "followers_total": {
-          "prior": null,
-          "current": 40000,
-          "abs_change": null,
-          "pct_change": null,
+        "new_followers": {
+          "prior": 936,
+          "current": 980,
+          "abs_change": 44,
+          "pct_change": 4.700854700854701,
           "flagged": false
         },
-        "engagement_total": {
-          "prior": null,
-          "current": 1800,
-          "abs_change": null,
-          "pct_change": null,
+        "reactions_total": {
+          "prior": 552,
+          "current": 540,
+          "abs_change": -12,
+          "pct_change": -2.1739130434782608,
           "flagged": false
         },
-        "engagement_rate": {
-          "prior": null,
-          "current": 4.5,
-          "abs_change": null,
-          "pct_change": null,
+        "comments_total": {
+          "prior": 12,
+          "current": 14,
+          "abs_change": 2,
+          "pct_change": 16.666666666666664,
           "flagged": false
         },
         "posts_count": {
-          "prior": null,
-          "current": 4,
-          "abs_change": null,
+          "prior": 21,
+          "current": 20,
+          "abs_change": -1,
+          "pct_change": null,
+          "flagged": false
+        },
+        "comments_per_day": {
+          "prior": 0.0,
+          "current": 2.0,
+          "abs_change": 2.0,
           "pct_change": null,
           "flagged": false
         }
@@ -241,33 +290,40 @@
     },
     "adswerve": {
       "company_name": "Adswerve",
-      "prior_date": null,
+      "prior_date": "2026-08-21",
       "metrics": {
-        "followers_total": {
-          "prior": null,
-          "current": 12000,
-          "abs_change": null,
-          "pct_change": null,
-          "flagged": false
+        "new_followers": {
+          "prior": 61,
+          "current": 410,
+          "abs_change": 349,
+          "pct_change": 572.1311475409836,
+          "flagged": true
         },
-        "engagement_total": {
-          "prior": null,
-          "current": 600,
-          "abs_change": null,
-          "pct_change": null,
-          "flagged": false
+        "reactions_total": {
+          "prior": 265,
+          "current": 3800,
+          "abs_change": 3535,
+          "pct_change": 1333.9622641509434,
+          "flagged": true
         },
-        "engagement_rate": {
-          "prior": null,
-          "current": 5.0,
-          "abs_change": null,
-          "pct_change": null,
-          "flagged": false
+        "comments_total": {
+          "prior": 4,
+          "current": 85,
+          "abs_change": 81,
+          "pct_change": 2025.0,
+          "flagged": true
         },
         "posts_count": {
-          "prior": null,
-          "current": 3,
-          "abs_change": null,
+          "prior": 14,
+          "current": 16,
+          "abs_change": 2,
+          "pct_change": null,
+          "flagged": false
+        },
+        "comments_per_day": {
+          "prior": 0.0,
+          "current": 12.1,
+          "abs_change": 12.1,
           "pct_change": null,
           "flagged": false
         }
@@ -275,38 +331,73 @@
     },
     "insight-enterprises": {
       "company_name": "Insight Enterprises",
-      "prior_date": null,
+      "prior_date": "2026-08-21",
       "metrics": {
-        "followers_total": {
-          "prior": null,
-          "current": 300000,
-          "abs_change": null,
-          "pct_change": null,
+        "new_followers": {
+          "prior": 3899,
+          "current": 4050,
+          "abs_change": 151,
+          "pct_change": 3.87278789433188,
           "flagged": false
         },
-        "engagement_total": {
-          "prior": null,
-          "current": 4500,
-          "abs_change": null,
-          "pct_change": null,
+        "reactions_total": {
+          "prior": 3832,
+          "current": 3900,
+          "abs_change": 68,
+          "pct_change": 1.7745302713987474,
           "flagged": false
         },
-        "engagement_rate": {
-          "prior": null,
-          "current": 1.5,
-          "abs_change": null,
-          "pct_change": null,
+        "comments_total": {
+          "prior": 58,
+          "current": 62,
+          "abs_change": 4,
+          "pct_change": 6.896551724137931,
           "flagged": false
         },
         "posts_count": {
-          "prior": null,
-          "current": 5,
-          "abs_change": null,
+          "prior": 75,
+          "current": 74,
+          "abs_change": -1,
+          "pct_change": null,
+          "flagged": false
+        },
+        "comments_per_day": {
+          "prior": 2.0,
+          "current": 8.9,
+          "abs_change": 6.9,
           "pct_change": null,
           "flagged": false
         }
       }
     }
   },
-  "flagged_changes": []
+  "flagged_changes": [
+    {
+      "company_key": "adswerve",
+      "company_name": "Adswerve",
+      "metric": "comments_total",
+      "prior": 4,
+      "current": 85,
+      "abs_change": 81,
+      "pct_change": 2025.0
+    },
+    {
+      "company_key": "adswerve",
+      "company_name": "Adswerve",
+      "metric": "reactions_total",
+      "prior": 265,
+      "current": 3800,
+      "abs_change": 3535,
+      "pct_change": 1333.9622641509434
+    },
+    {
+      "company_key": "adswerve",
+      "company_name": "Adswerve",
+      "metric": "new_followers",
+      "prior": 61,
+      "current": 410,
+      "abs_change": 349,
+      "pct_change": 572.1311475409836
+    }
+  ]
 }

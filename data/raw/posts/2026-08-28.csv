@@ -1,9 +1,0 @@
-post_id,url,author_type,author_name,date_posted,post_type,content_text,likes,comments,shares,hashtags
-acn-001,https://www.linkedin.com/posts/accenture_acn-001,company,Accenture,2026-08-26,video,"How generative AI is reinventing enterprise operations - our latest Reinvention research.",1800,120,90,#AI;#Reinvention
-del-001,https://www.linkedin.com/posts/deloitte_del-001,company,Deloitte,2026-08-25,document,"5 ways generative AI is changing the audit function. Swipe through our latest carousel.",1400,80,60,#GenAI;#Audit
-mck-001,https://www.linkedin.com/posts/mckinsey_mck-001,company,McKinsey & Company,2026-08-27,article,"The future of work: what leaders are getting wrong about hybrid productivity.",2600,210,140,#FutureOfWork
-adw-001,https://www.linkedin.com/posts/adswerve_adw-001,company,Adswerve,2026-08-24,text,"3 quick wins for your GA4 migration before Q4 reporting season.",95,14,6,#GA4;#Analytics
-slc-001,https://www.linkedin.com/posts/slalom_slc-001,company,Slalom Consulting,2026-08-26,image,"Trust is the foundation of every client relationship. Here's how our teams build it.",210,18,9,#ClientTrust
-brad-001,https://www.linkedin.com/posts/bradjackson_brad-001,leader,Brad Jackson,2026-08-25,text,"Culture isn't a slide in a deck - it's what happens when no one's watching.",340,45,12,
-tom-001,https://www.linkedin.com/posts/tomzawacki_tom-001,leader,Tom Zawacki,2026-08-27,text,"First-party data strategy isn't optional anymore. Here's where most brands are behind.",180,22,15,#FirstPartyData
-jason-001,https://www.linkedin.com/posts/jasongirzadas_jason-001,leader,Jason Girzadas,2026-08-24,article,"Reflections on leading through disruption - what I've learned this year.",520,60,25,#Leadership

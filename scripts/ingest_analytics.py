@@ -18,11 +18,11 @@ sys.path.insert(0, str(Path(__file__).resolve().parent))
 import common as c
 
 METRIC_FIELDS = (
-    "followers_total",
-    "followers_new",
-    "engagement_total",
-    "engagement_rate",
+    "new_followers",
     "posts_count",
+    "comments_total",
+    "comments_per_day",
+    "reactions_total",
 )
 
 
@@ -30,6 +30,7 @@ def main():
     competitors = c.load_competitors()
     mappings = c.load_column_mappings()["analytics"]
     lookup = c.build_company_lookup(competitors)
+    self_page_names = c.build_self_page_names(competitors)
 
     manifest_path = c.STATE_DIR / "ingested_analytics_files.json"
     ingested = set(c.load_json(manifest_path, []))
@@ -53,18 +54,33 @@ def main():
     unmatched = set()
     for path in new_files:
         df = c.normalize_columns(c.read_table(path), mappings)
+
+        if "date" not in df.columns:
+            # The real Coefficient competitor table gives one period date for
+            # the whole export, not a per-row column — fall back to the
+            # filename (e.g. data/raw/analytics/2026-08-28.csv).
+            filename_date = pd.to_datetime(path.stem, errors="coerce")
+            if pd.isna(filename_date):
+                filename_date = None
+            if filename_date is not None:
+                df["date"] = filename_date
+
         missing = [col for col in ("company", "date") if col not in df.columns]
         if missing:
             print(
                 f"WARNING: {path.name} is missing required column(s) {missing} after mapping "
-                f"— skipping file. Found columns: {list(df.columns)}"
+                f"(and no date could be parsed from the filename) — skipping file. "
+                f"Found columns: {list(df.columns)}"
             )
             continue
 
         for _, row in df.iterrows():
-            key = lookup.get(str(row["company"]).strip().lower())
+            company_raw = str(row["company"]).strip()
+            if company_raw.lower() in self_page_names:
+                continue  # Zilker Trail's own row in the comparison table
+            key = lookup.get(company_raw.lower())
             if key is None:
-                unmatched.add(str(row["company"]))
+                unmatched.add(company_raw)
                 continue
             record = {"date": pd.to_datetime(row["date"]).normalize(), "company_key": key}
             for field in METRIC_FIELDS:

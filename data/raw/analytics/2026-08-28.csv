@@ -1,10 +1,11 @@
-company,date,followers_total,followers_new,engagement_total,engagement_rate,posts_count
-Accenture,2026-08-28,15000000,12000,45000,0.30,8
-Slalom Consulting,2026-08-28,250000,900,3200,1.28,5
-Deloitte,2026-08-28,15500000,14000,52000,0.34,10
-KPMG,2026-08-28,3000000,4000,9000,0.30,6
-PwC,2026-08-28,6000000,6500,18000,0.30,7
-McKinsey & Company,2026-08-28,10000000,9000,61000,0.61,9
-Apply Digital,2026-08-28,40000,300,1800,4.50,4
-Adswerve,2026-08-28,12000,80,600,5.00,3
-Insight Enterprises,2026-08-28,300000,1200,4500,1.50,5
+Page,New Followers,Posts,Comments,Comments per day,Reactions
+APPLY,980,20,14,2,540
+Insight,4050,74,62,8.9,3900
+KPMG,72500,14,140,20,7600
+Slalom,4600,20,60,8.6,1820
+PwC,91200,39,410,58.6,12900
+"Adswerve, Inc.",410,16,85,12.1,3800
+Accenture,114800,17,470,67.1,33900
+McKinsey & Company,60100,110,3400,485.7,60200
+Zilker Trail Consulting,35,7,11,1.6,450
+Deloitte,265500,999,2050,292.9,172000

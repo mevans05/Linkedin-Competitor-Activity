@@ -19,8 +19,11 @@ import pandas as pd
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 import common as c
 
-PCT_METRICS = ("followers_total", "engagement_total", "engagement_rate")
+PCT_METRICS = ("new_followers", "reactions_total", "comments_total")
 ABS_METRICS = ("posts_count",)
+# comments_per_day is derived/informational (comments_total / period days) —
+# carried through for display but not independently flagged.
+PASSTHROUGH_METRICS = ("comments_per_day",)
 
 
 def pct_change(prior, current):
@@ -63,7 +66,7 @@ def main():
         prior = prior_rows.iloc[-1] if not prior_rows.empty else None
 
         metrics = {}
-        for metric in (*PCT_METRICS, *ABS_METRICS):
+        for metric in (*PCT_METRICS, *ABS_METRICS, *PASSTHROUGH_METRICS):
             cur_val = current.get(metric)
             prior_val = prior.get(metric) if prior is not None else None
             if pd.isna(cur_val):

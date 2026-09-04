@@ -2,8 +2,16 @@
 
 ## What this is
 
-A weekly pipeline that turns Coefficient-synced LinkedIn competitor data into
-a report with:
+A weekly pipeline combining two data sources into one report:
+- **Analytics** (follower growth, reactions, comments, posts) synced via
+  Coefficient from LinkedIn's Analytics → Competitors comparison table.
+- **Post content** (captions, format, CTA) for tracked Company Pages and
+  leadership profiles, gathered manually each week — LinkedIn's Competitors
+  analytics only exposes aggregate counts for pages you don't administer,
+  and doesn't cover individual profiles at all, so there's no automated feed
+  for this half.
+
+The output is a report with:
 - An **executive summary** of week-over-week (WoW) analytics movement, with
   significant changes flagged and speculation on why.
 - An **index of every net-new post** for tracked Company Pages and
@@ -18,20 +26,32 @@ correct). Qualitative analysis is written by Claude each week via the
 
 ## Weekly workflow
 
-1. **Export from Coefficient** the two data sets for the week:
-   - LinkedIn Analytics → Competitors data (follower counts, engagement) →
-     save as `data/raw/analytics/<date>.csv` (or `.xlsx`)
-   - Company Page + leadership profile posts → save as
-     `data/raw/posts/<date>.csv` (or `.xlsx`)
+1. **Export analytics from Coefficient**: the LinkedIn Pages Import
+   competitor comparison table (Page / New Followers / Posts / Comments /
+   Comments per day / Reactions). Save as `data/raw/analytics/<date>.csv`,
+   where `<date>` is that week's period-end date — the filename *is* the
+   date for every row in the file (the real Coefficient table gives one
+   period for the whole export, not a per-row date column).
 
-   Filenames don't matter beyond being unique — the ingest scripts scan the
-   whole folder for anything not yet processed.
+   **Set the underlying LinkedIn Analytics comparison window to 7 days**
+   before each sync. Coefficient just pulls whatever period the report is
+   configured for (a 30-day pull, refreshed weekly, will look like a
+   rolling-window trend, not a clean week-over-week signal — most of two
+   consecutive 30-day pulls overlap).
 
-2. **Run the skill**: invoke `/weekly-linkedin-audit` (or ask Claude to
+2. **Gather post content manually**: visit each tracked Company Page's Posts
+   tab and each leader's profile Activity, and record what's new since last
+   week. Save it as `data/raw/posts/<date>.docx` (or `.txt`) following the
+   block format below — one file can contain multiple competitors/leaders
+   back to back. It's fine to paste more than just the new posts (last
+   week's + this week's) — the pipeline dedups automatically against
+   `data/state/seen_posts.json`, so nothing gets double-reported.
+
+3. **Run the skill**: invoke `/weekly-linkedin-audit` (or ask Claude to
    "run the weekly LinkedIn audit"). It runs the pipeline, writes the
    qualitative analysis, commits the report, and publishes an HTML version.
 
-3. **Review** `reports/weekly/<date>.md` (and the published artifact link)
+4. **Review** `reports/weekly/<date>.md` (and the published artifact link)
    before sharing externally — treat the qualitative sections as a strong
    first draft, not final copy.
 
@@ -56,58 +76,96 @@ Markdown.
 ## Expected data schema
 
 Column headers are matched flexibly via `config/column_mappings.yaml` (case-
-insensitive, several common aliases per field already included) — if
-Coefficient's actual export uses different headers than what's listed there,
-either rename the columns in the export or add the real header text as a new
-alias in that file.
+insensitive, several common aliases per field already included) — if a real
+export uses different headers than what's listed there, either rename the
+columns or add the real header text as a new alias in that file.
 
-### Analytics export — one row per company per week
+### Analytics export — one row per company, matching the Coefficient competitor table
 
-| Canonical field | Meaning |
-|---|---|
-| `company` | Must match a `linkedin_name` or `key` in `config/competitors.yaml` |
-| `date` | Snapshot/week-ending date |
-| `followers_total` | Total followers as of this snapshot |
-| `followers_new` | New followers this period (optional) |
-| `engagement_total` | Total engagements this period |
-| `engagement_rate` | Engagement rate (%) |
-| `posts_count` | Posts published this period |
+| Canonical field | Source column | Meaning |
+|---|---|---|
+| `company` | Page | Must match a `linkedin_name`, `key`, or `aliases` entry in `config/competitors.yaml`. Zilker Trail's own row (it's a self-vs-competitor table) is skipped automatically via `self_page_aliases` in that file. |
+| `date` | *(none — derived from filename)* | Optional column; if absent, the period-end date is parsed from the filename (`2026-09-04.csv`). |
+| `new_followers` | New Followers | New followers this period |
+| `posts_count` | Posts | Posts published this period |
+| `comments_total` | Comments | Total comments this period |
+| `comments_per_day` | Comments per day | Informational only — not independently flagged (it's derived from `comments_total`) |
+| `reactions_total` | Reactions | Total reactions this period |
 
-### Posts export — one row per post
+Note there is **no cumulative follower total or engagement rate** in this
+source — only period counts. Significance thresholds for these metrics
+(`config/thresholds.yaml`) are set relatively high by default since
+week-to-week counts are naturally noisier than a cumulative total would be.
 
-| Canonical field | Meaning |
-|---|---|
-| `post_id` or `url` | Unique identifier — at least one is required for dedup to work correctly. Without either, a content hash is used as a fallback, which is less reliable for detecting true duplicates. |
-| `author_type` | `company` or `leader` (optional — if omitted, the author name is matched against both lists) |
-| `author_name` | Must match a company `linkedin_name`/`key` or leader `full_name`/`key` in `config/competitors.yaml` |
-| `date_posted` | Post date |
-| `post_type` | e.g. text, image, video, document, poll, article |
-| `content_text` | Caption/body text |
-| `likes`, `comments`, `shares` | Engagement counts |
-| `hashtags` | Optional |
+### Posts — manually pasted, one block per entity
+
+Paste into a `.docx` (Word) file. The parser recognizes this structure,
+matching the format of a typical "top engagement posts" copy from LinkedIn:
+
+```
+Competitor: Accenture
+Top Engagement Posts:
+1
+Post URL:
+https://www.linkedin.com/feed/update/...
+Post Text:
+How do you build an enterprise that doesn't just run, but thinks?
+Learn more in our latest report: https://accntu.re/...
+Post Format:
+Animated image
+CTA:
+Link to website research report
+2
+Post URL:
+...
+```
+
+- The entity line accepts `Competitor:`, `Leader:`, or `Profile:` — the name
+  after the colon is matched against both company and leader lists in
+  `config/competitors.yaml`, so any of the three labels works for either.
+- `Post Text:` can span multiple paragraphs (bracketed alt-text like
+  `[VD: ...]` or `[Video Description: ...]` is kept as part of the content —
+  useful context for the qualitative write-up). LinkedIn hashtags often
+  paste into Word as a standalone "hashtag" paragraph followed by "#Tag" on
+  its own line — the parser drops the placeholder and rejoins the tag
+  automatically.
+- No engagement counts (likes/comments/shares) or post dates come from this
+  source — the report gracefully omits those fields when absent rather than
+  showing zeroes. If a future source *does* provide them (a different tool,
+  or LinkedIn adding this to an export), the same canonical fields
+  (`likes`, `comments`, `shares`, `date_posted`) are already wired up — CSV
+  and XLSX posts exports with those columns work too, `read_table()`
+  dispatches by file extension.
+- `post_id` isn't in this source either — the post URL is used as the
+  dedup key instead (a content hash is the last-resort fallback if neither
+  is present).
 
 ## How "net-new" is determined
 
 Every post's `post_id` (or `url`, or a content hash as last resort) is
 tracked per-author in `data/state/seen_posts.json`. Each week, only posts not
-already in that file are reported as "new" — this means a post scraped twice
-(e.g. reappearing in an export because of how Coefficient's sync window
-works) won't be double-counted or re-reported.
+already in that file are reported as "new" — this means pasting overlapping
+content two weeks in a row (e.g. LinkedIn's own "top posts" view still
+showing last week's post) won't be double-counted or re-reported.
 
 ## Config files
 
 - `config/competitors.yaml` — the tracked Company Pages and leadership
-  profiles. The `key` for each entry must stay stable over time (it's the
-  join key across all historical data) even if the display name changes.
+  profiles, plus `aliases` for alternate names seen in real exports (e.g.
+  the Coefficient table uses "APPLY" and "Insight" rather than full page
+  names) and `self_page_aliases` for Zilker Trail's own name(s) so its row
+  in the comparison table is skipped rather than flagged as unmatched. The
+  `key` for each entry must stay stable over time (it's the join key across
+  all historical data) even if the display name changes.
 - `config/thresholds.yaml` — what counts as a "significant" WoW change per
   metric. Tune these once you've seen a few weeks of normal variance for
   this competitor set.
 - `config/column_mappings.yaml` — source-column aliasing for flexible
   ingestion.
 - `config/zilker_trail.md` — Zilker Trail's positioning/voice, used to
-  ground the POV sections of the report. **This started as an inferred
-  draft — review and correct it**; the qualitative analysis is only as good
-  as this doc.
+  ground the POV sections of the report. Grounded in the AI Philosophy and
+  Pathfinder/Digital Commerce decks as of 2026-09-04 — re-derive from source
+  docs if either is materially updated.
 
 ## Adjusting the report format
 
@@ -120,13 +178,16 @@ change structure; the skill relies on them to know where to write.
 
 - **"WARNING: row(s) had a company/author name not found in
   competitors.yaml"** — the export used a name/spelling that doesn't match
-  `linkedin_name` or `key` for any tracked entry. Either fix the export or
-  add the new spelling to `competitors.yaml`.
+  `linkedin_name`, `key`, or `aliases` for any tracked entry. Either fix the
+  export or add the new spelling as an alias in `competitors.yaml`.
 - **A file doesn't get picked up by ingest** — check
   `data/state/ingested_analytics_files.json` /
   `ingested_posts_files.json`; a file already listed there is skipped even
   if you edit it. Delete its entry from the manifest to force re-ingestion
   (rare — usually only needed to fix a bad export after the fact).
+- **Analytics file skipped with "missing required column(s) ['date']"** —
+  the filename couldn't be parsed as a date. Name the file after the
+  period-end date (`2026-09-04.csv`), or add an explicit date column.
 - **Numbers look right but the significance flags feel off** — tune
   `config/thresholds.yaml`; the defaults are a starting point, not a fixed
-  standard.
+  standard, and were set for true 7-day counts (see the window note above).

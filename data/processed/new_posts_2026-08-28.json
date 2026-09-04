@@ -2,121 +2,69 @@
   "week_ending": "2026-08-28",
   "new_posts": {
     "company_pages": {
-      "accenture": [
+      "adswerve": [
         {
-          "post_id": "acn-001",
-          "url": "https://www.linkedin.com/posts/accenture_acn-001",
-          "date_posted": "2026-08-26",
-          "post_type": "video",
-          "content_text": "How generative AI is reinventing enterprise operations - our latest Reinvention research.",
-          "likes": 1800,
-          "comments": 120,
-          "shares": 90,
+          "post_id": "https://www.linkedin.com/posts/adswerve-inc-_ga4-server-side-tagging-activity-7500000000000000001-a1b2",
+          "url": "https://www.linkedin.com/posts/adswerve-inc-_ga4-server-side-tagging-activity-7500000000000000001-a1b2",
+          "date_posted": null,
+          "post_type": "Video",
+          "content_text": "We broke down the exact GA4 + server-side tagging setup that cut a client's data loss by 40%. Full walkthrough of the container config, consent gating, and validation steps inside. [VD: A diagram shows the server-side tagging architecture from browser to first-party server to GA4.]",
+          "likes": null,
+          "comments": null,
+          "shares": null,
           "reactions_total": null,
-          "hashtags": "#AI;#Reinvention"
+          "hashtags": null,
+          "cta": "Link to blog walkthrough"
         }
       ],
       "deloitte": [
         {
-          "post_id": "del-001",
-          "url": "https://www.linkedin.com/posts/deloitte_del-001",
-          "date_posted": "2026-08-25",
-          "post_type": "document",
-          "content_text": "5 ways generative AI is changing the audit function. Swipe through our latest carousel.",
-          "likes": 1400,
-          "comments": 80,
-          "shares": 60,
+          "post_id": "https://www.linkedin.com/posts/deloitte_agentic-ai-enterprise-workflows-activity-7500000000000000002-c3d4",
+          "url": "https://www.linkedin.com/posts/deloitte_agentic-ai-enterprise-workflows-activity-7500000000000000002-c3d4",
+          "date_posted": null,
+          "post_type": "Document",
+          "content_text": "Inside Deloitte's approach to agentic AI in enterprise workflows. Our latest point of view on where autonomous agents create real operating leverage \u2014 and where human oversight still has to sit.",
+          "likes": null,
+          "comments": null,
+          "shares": null,
           "reactions_total": null,
-          "hashtags": "#GenAI;#Audit"
-        }
-      ],
-      "mckinsey": [
-        {
-          "post_id": "mck-001",
-          "url": "https://www.linkedin.com/posts/mckinsey_mck-001",
-          "date_posted": "2026-08-27",
-          "post_type": "article",
-          "content_text": "The future of work: what leaders are getting wrong about hybrid productivity.",
-          "likes": 2600,
-          "comments": 210,
-          "shares": 140,
-          "reactions_total": null,
-          "hashtags": "#FutureOfWork"
-        }
-      ],
-      "adswerve": [
-        {
-          "post_id": "adw-001",
-          "url": "https://www.linkedin.com/posts/adswerve_adw-001",
-          "date_posted": "2026-08-24",
-          "post_type": "text",
-          "content_text": "3 quick wins for your GA4 migration before Q4 reporting season.",
-          "likes": 95,
-          "comments": 14,
-          "shares": 6,
-          "reactions_total": null,
-          "hashtags": "#GA4;#Analytics"
-        }
-      ],
-      "slalom-consulting": [
-        {
-          "post_id": "slc-001",
-          "url": "https://www.linkedin.com/posts/slalom_slc-001",
-          "date_posted": "2026-08-26",
-          "post_type": "image",
-          "content_text": "Trust is the foundation of every client relationship. Here's how our teams build it.",
-          "likes": 210,
-          "comments": 18,
-          "shares": 9,
-          "reactions_total": null,
-          "hashtags": "#ClientTrust"
+          "hashtags": null,
+          "cta": "Download the point of view"
         }
       ]
     },
     "leadership_profiles": {
       "brad-jackson": [
         {
-          "post_id": "brad-001",
-          "url": "https://www.linkedin.com/posts/bradjackson_brad-001",
-          "date_posted": "2026-08-25",
-          "post_type": "text",
-          "content_text": "Culture isn't a slide in a deck - it's what happens when no one's watching.",
-          "likes": 340,
-          "comments": 45,
-          "shares": 12,
+          "post_id": "https://www.linkedin.com/posts/bradjackson-slalom_consulting-activity-7500000000000000003-e5f6",
+          "url": "https://www.linkedin.com/posts/bradjackson-slalom_consulting-activity-7500000000000000003-e5f6",
+          "date_posted": null,
+          "post_type": "Text",
+          "content_text": "The best consultants I know ask better questions, not give faster answers.",
+          "likes": null,
+          "comments": null,
+          "shares": null,
           "reactions_total": null,
-          "hashtags": NaN
+          "hashtags": null,
+          "cta": NaN
         }
       ],
-      "tom-zawacki": [
+      "john-f-walsh": [
         {
-          "post_id": "tom-001",
-          "url": "https://www.linkedin.com/posts/tomzawacki_tom-001",
-          "date_posted": "2026-08-27",
-          "post_type": "text",
-          "content_text": "First-party data strategy isn't optional anymore. Here's where most brands are behind.",
-          "likes": 180,
-          "comments": 22,
-          "shares": 15,
+          "post_id": "https://www.linkedin.com/posts/john-f-walsh_transformation-activity-7500000000000000004-g7h8",
+          "url": "https://www.linkedin.com/posts/john-f-walsh_transformation-activity-7500000000000000004-g7h8",
+          "date_posted": null,
+          "post_type": "Text",
+          "content_text": "Every transformation program fails for the same three reasons. None of them are technology.",
+          "likes": null,
+          "comments": null,
+          "shares": null,
           "reactions_total": null,
-          "hashtags": "#FirstPartyData"
-        }
-      ],
-      "jason-girzadas": [
-        {
-          "post_id": "jason-001",
-          "url": "https://www.linkedin.com/posts/jasongirzadas_jason-001",
-          "date_posted": "2026-08-24",
-          "post_type": "article",
-          "content_text": "Reflections on leading through disruption - what I've learned this year.",
-          "likes": 520,
-          "comments": 60,
-          "shares": 25,
-          "reactions_total": null,
-          "hashtags": "#Leadership"
+          "hashtags": null,
+          "cta": NaN
         }
       ]
     }
   },
-  "total_new_posts": 8
+  "total_new_posts": 4
 }

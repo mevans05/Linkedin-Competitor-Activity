@@ -1,7 +1,9 @@
 #!/usr/bin/env python3
 """Index net-new LinkedIn posts for tracked Company Pages and leaders.
 
-Reads every not-yet-ingested file in data/raw/posts/, normalizes columns via
+Reads every not-yet-ingested file in data/raw/posts/ — CSV/XLSX with the
+canonical columns, or a manually-pasted .docx digest (see
+common.read_pasted_posts_docx) — normalizes columns via
 config/column_mappings.yaml, resolves each row's author to a company or
 leader key from config/competitors.yaml, and diffs post ids against
 data/state/seen_posts.json to find posts we haven't reported before.
@@ -30,7 +32,7 @@ import common as c
 
 POST_FIELDS = (
     "post_id", "url", "date_posted", "post_type", "content_text",
-    "likes", "comments", "shares", "reactions_total", "hashtags",
+    "likes", "comments", "shares", "reactions_total", "hashtags", "cta",
 )
 
 
@@ -79,7 +81,7 @@ def main():
 
     raw_dir = c.RAW_DIR / "posts"
     raw_dir.mkdir(parents=True, exist_ok=True)
-    files = sorted(p for p in raw_dir.glob("*") if p.suffix.lower() in (".csv", ".xlsx", ".xls"))
+    files = sorted(p for p in raw_dir.glob("*") if p.suffix.lower() in (".csv", ".xlsx", ".xls", ".docx"))
     new_files = [p for p in files if p.name not in ingested_files]
 
     if not new_files:

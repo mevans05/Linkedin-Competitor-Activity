@@ -3,6 +3,20 @@
 # to join analytics rows, post rows, and the seen-posts state file. If a company
 # or leader's name changes on LinkedIn, keep the `key` the same and just update
 # `linkedin_name` / `url`.
+#
+# `aliases` (optional): other spellings seen in actual data sources. The
+# Coefficient-synced competitor comparison table uses shortened/informal names
+# (e.g. "APPLY", "Insight", "Slalom") rather than full LinkedIn page names —
+# add whatever variant you see in a real export here rather than renaming
+# `linkedin_name`.
+
+# Zilker Trail's own page appears as a row in the Coefficient competitor
+# comparison table (it's a self-vs-competitor comparison view). List the
+# name(s) it appears under here so ingest scripts skip it silently instead of
+# warning about an unmatched company.
+self_page_aliases:
+  - Zilker Trail Consulting
+  - Zilker Trail
 
 company_pages:
   - key: accenture
@@ -11,6 +25,7 @@ company_pages:
   - key: slalom-consulting
     linkedin_name: Slalom Consulting
     url: https://www.linkedin.com/company/slalom-consulting/
+    aliases: [Slalom]
   - key: deloitte
     linkedin_name: Deloitte
     url: https://www.linkedin.com/company/deloitte/
@@ -26,12 +41,15 @@ company_pages:
   - key: apply-digital
     linkedin_name: Apply Digital
     url: https://www.linkedin.com/company/applydigital/
+    aliases: [APPLY, Apply]
   - key: adswerve
     linkedin_name: Adswerve
     url: https://www.linkedin.com/company/adswerve-inc-/
+    aliases: ["Adswerve, Inc.", "Adswerve Inc."]
   - key: insight-enterprises
     linkedin_name: Insight Enterprises
     url: https://www.linkedin.com/company/insight-enterprises-inc/
+    aliases: [Insight]
 
 leadership_profiles:
   - key: brad-jackson

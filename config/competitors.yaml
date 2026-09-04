@@ -1,0 +1,68 @@
+# Tracked competitors for the weekly LinkedIn audit.
+# `key` values must be stable, lowercase, hyphenated identifiers — they're used
+# to join analytics rows, post rows, and the seen-posts state file. If a company
+# or leader's name changes on LinkedIn, keep the `key` the same and just update
+# `linkedin_name` / `url`.
+
+company_pages:
+  - key: accenture
+    linkedin_name: Accenture
+    url: https://www.linkedin.com/company/accenture/
+  - key: slalom-consulting
+    linkedin_name: Slalom Consulting
+    url: https://www.linkedin.com/company/slalom-consulting/
+  - key: deloitte
+    linkedin_name: Deloitte
+    url: https://www.linkedin.com/company/deloitte/
+  - key: kpmg
+    linkedin_name: KPMG
+    url: https://www.linkedin.com/company/kpmg/
+  - key: pwc
+    linkedin_name: PwC
+    url: https://www.linkedin.com/company/pwc/
+  - key: mckinsey
+    linkedin_name: McKinsey & Company
+    url: https://www.linkedin.com/company/mckinsey/
+  - key: apply-digital
+    linkedin_name: Apply Digital
+    url: https://www.linkedin.com/company/applydigital/
+  - key: adswerve
+    linkedin_name: Adswerve
+    url: https://www.linkedin.com/company/adswerve-inc-/
+  - key: insight-enterprises
+    linkedin_name: Insight Enterprises
+    url: https://www.linkedin.com/company/insight-enterprises-inc/
+
+leadership_profiles:
+  - key: brad-jackson
+    full_name: Brad Jackson
+    company_key: slalom-consulting
+    url: https://www.linkedin.com/in/brad-jackson-slalom
+  - key: jason-girzadas
+    full_name: Jason Girzadas
+    company_key: deloitte
+    url: https://www.linkedin.com/in/jasongirzadas
+  - key: paul-griggs
+    full_name: Paul Griggs
+    company_key: pwc
+    url: https://www.linkedin.com/in/paulgriggs-pwc/
+  - key: ali-alkhafaji
+    full_name: Ali Alkhafaji
+    company_key: apply-digital
+    url: https://www.linkedin.com/in/alialkhafaji/
+  - key: tom-zawacki
+    full_name: Tom Zawacki
+    company_key: adswerve
+    url: https://www.linkedin.com/in/tomzawacki/
+  - key: john-f-walsh
+    full_name: John F. Walsh
+    company_key: null
+    url: https://www.linkedin.com/in/john-f-walsh
+  - key: tim-walsh
+    full_name: Tim Walsh
+    company_key: null
+    url: https://www.linkedin.com/in/timwalsh3
+  - key: javier-arenas
+    full_name: Javier Arenas
+    company_key: null
+    url: https://www.linkedin.com/in/javier-arenas-47ab72a/

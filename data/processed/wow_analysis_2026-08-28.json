@@ -1,0 +1,312 @@
+{
+  "week_ending": "2026-08-28",
+  "companies": {
+    "accenture": {
+      "company_name": "Accenture",
+      "prior_date": null,
+      "metrics": {
+        "followers_total": {
+          "prior": null,
+          "current": 15000000,
+          "abs_change": null,
+          "pct_change": null,
+          "flagged": false
+        },
+        "engagement_total": {
+          "prior": null,
+          "current": 45000,
+          "abs_change": null,
+          "pct_change": null,
+          "flagged": false
+        },
+        "engagement_rate": {
+          "prior": null,
+          "current": 0.3,
+          "abs_change": null,
+          "pct_change": null,
+          "flagged": false
+        },
+        "posts_count": {
+          "prior": null,
+          "current": 8,
+          "abs_change": null,
+          "pct_change": null,
+          "flagged": false
+        }
+      }
+    },
+    "slalom-consulting": {
+      "company_name": "Slalom Consulting",
+      "prior_date": null,
+      "metrics": {
+        "followers_total": {
+          "prior": null,
+          "current": 250000,
+          "abs_change": null,
+          "pct_change": null,
+          "flagged": false
+        },
+        "engagement_total": {
+          "prior": null,
+          "current": 3200,
+          "abs_change": null,
+          "pct_change": null,
+          "flagged": false
+        },
+        "engagement_rate": {
+          "prior": null,
+          "current": 1.28,
+          "abs_change": null,
+          "pct_change": null,
+          "flagged": false
+        },
+        "posts_count": {
+          "prior": null,
+          "current": 5,
+          "abs_change": null,
+          "pct_change": null,
+          "flagged": false
+        }
+      }
+    },
+    "deloitte": {
+      "company_name": "Deloitte",
+      "prior_date": null,
+      "metrics": {
+        "followers_total": {
+          "prior": null,
+          "current": 15500000,
+          "abs_change": null,
+          "pct_change": null,
+          "flagged": false
+        },
+        "engagement_total": {
+          "prior": null,
+          "current": 52000,
+          "abs_change": null,
+          "pct_change": null,
+          "flagged": false
+        },
+        "engagement_rate": {
+          "prior": null,
+          "current": 0.34,
+          "abs_change": null,
+          "pct_change": null,
+          "flagged": false
+        },
+        "posts_count": {
+          "prior": null,
+          "current": 10,
+          "abs_change": null,
+          "pct_change": null,
+          "flagged": false
+        }
+      }
+    },
+    "kpmg": {
+      "company_name": "KPMG",
+      "prior_date": null,
+      "metrics": {
+        "followers_total": {
+          "prior": null,
+          "current": 3000000,
+          "abs_change": null,
+          "pct_change": null,
+          "flagged": false
+        },
+        "engagement_total": {
+          "prior": null,
+          "current": 9000,
+          "abs_change": null,
+          "pct_change": null,
+          "flagged": false
+        },
+        "engagement_rate": {
+          "prior": null,
+          "current": 0.3,
+          "abs_change": null,
+          "pct_change": null,
+          "flagged": false
+        },
+        "posts_count": {
+          "prior": null,
+          "current": 6,
+          "abs_change": null,
+          "pct_change": null,
+          "flagged": false
+        }
+      }
+    },
+    "pwc": {
+      "company_name": "PwC",
+      "prior_date": null,
+      "metrics": {
+        "followers_total": {
+          "prior": null,
+          "current": 6000000,
+          "abs_change": null,
+          "pct_change": null,
+          "flagged": false
+        },
+        "engagement_total": {
+          "prior": null,
+          "current": 18000,
+          "abs_change": null,
+          "pct_change": null,
+          "flagged": false
+        },
+        "engagement_rate": {
+          "prior": null,
+          "current": 0.3,
+          "abs_change": null,
+          "pct_change": null,
+          "flagged": false
+        },
+        "posts_count": {
+          "prior": null,
+          "current": 7,
+          "abs_change": null,
+          "pct_change": null,
+          "flagged": false
+        }
+      }
+    },
+    "mckinsey": {
+      "company_name": "McKinsey & Company",
+      "prior_date": null,
+      "metrics": {
+        "followers_total": {
+          "prior": null,
+          "current": 10000000,
+          "abs_change": null,
+          "pct_change": null,
+          "flagged": false
+        },
+        "engagement_total": {
+          "prior": null,
+          "current": 61000,
+          "abs_change": null,
+          "pct_change": null,
+          "flagged": false
+        },
+        "engagement_rate": {
+          "prior": null,
+          "current": 0.61,
+          "abs_change": null,
+          "pct_change": null,
+          "flagged": false
+        },
+        "posts_count": {
+          "prior": null,
+          "current": 9,
+          "abs_change": null,
+          "pct_change": null,
+          "flagged": false
+        }
+      }
+    },
+    "apply-digital": {
+      "company_name": "Apply Digital",
+      "prior_date": null,
+      "metrics": {
+        "followers_total": {
+          "prior": null,
+          "current": 40000,
+          "abs_change": null,
+          "pct_change": null,
+          "flagged": false
+        },
+        "engagement_total": {
+          "prior": null,
+          "current": 1800,
+          "abs_change": null,
+          "pct_change": null,
+          "flagged": false
+        },
+        "engagement_rate": {
+          "prior": null,
+          "current": 4.5,
+          "abs_change": null,
+          "pct_change": null,
+          "flagged": false
+        },
+        "posts_count": {
+          "prior": null,
+          "current": 4,
+          "abs_change": null,
+          "pct_change": null,
+          "flagged": false
+        }
+      }
+    },
+    "adswerve": {
+      "company_name": "Adswerve",
+      "prior_date": null,
+      "metrics": {
+        "followers_total": {
+          "prior": null,
+          "current": 12000,
+          "abs_change": null,
+          "pct_change": null,
+          "flagged": false
+        },
+        "engagement_total": {
+          "prior": null,
+          "current": 600,
+          "abs_change": null,
+          "pct_change": null,
+          "flagged": false
+        },
+        "engagement_rate": {
+          "prior": null,
+          "current": 5.0,
+          "abs_change": null,
+          "pct_change": null,
+          "flagged": false
+        },
+        "posts_count": {
+          "prior": null,
+          "current": 3,
+          "abs_change": null,
+          "pct_change": null,
+          "flagged": false
+        }
+      }
+    },
+    "insight-enterprises": {
+      "company_name": "Insight Enterprises",
+      "prior_date": null,
+      "metrics": {
+        "followers_total": {
+          "prior": null,
+          "current": 300000,
+          "abs_change": null,
+          "pct_change": null,
+          "flagged": false
+        },
+        "engagement_total": {
+          "prior": null,
+          "current": 4500,
+          "abs_change": null,
+          "pct_change": null,
+          "flagged": false
+        },
+        "engagement_rate": {
+          "prior": null,
+          "current": 1.5,
+          "abs_change": null,
+          "pct_change": null,
+          "flagged": false
+        },
+        "posts_count": {
+          "prior": null,
+          "current": 5,
+          "abs_change": null,
+          "pct_change": null,
+          "flagged": false
+        }
+      }
+    }
+  },
+  "flagged_changes": []
+}

@@ -1,0 +1,29 @@
+# Maps the canonical field names this pipeline uses internally to the
+# possible column headers a raw export might use. When you connect the real
+# Coefficient sync, check the header row of the export against these lists —
+# if a column doesn't match, either rename it in the sheet/export, or add the
+# actual header text here as another alias. Matching is case-insensitive and
+# ignores surrounding whitespace.
+
+analytics:
+  company:        ["company", "page name", "page", "organization", "competitor"]
+  date:           ["date", "week", "week ending", "snapshot date", "period end"]
+  followers_total: ["followers_total", "total followers", "followers"]
+  followers_new:   ["followers_new", "new followers", "follower growth", "net new followers"]
+  engagement_total: ["engagement_total", "total engagement", "engagements"]
+  engagement_rate:  ["engagement_rate", "engagement rate", "engagement rate (%)"]
+  posts_count:      ["posts_count", "posts", "post count", "posts published"]
+
+posts:
+  post_id:      ["post_id", "post id", "id", "activity id", "urn"]
+  url:          ["url", "post url", "link", "permalink"]
+  author_type:  ["author_type", "type", "source type"]
+  author_name:  ["author_name", "author", "company", "profile", "name"]
+  date_posted:  ["date_posted", "date", "published date", "post date", "created date"]
+  post_type:    ["post_type", "content type", "format", "media type"]
+  content_text: ["content_text", "content", "text", "caption", "body"]
+  likes:        ["likes", "reactions"]
+  comments:     ["comments", "comment count"]
+  shares:       ["shares", "reposts", "share count"]
+  reactions_total: ["reactions_total", "total reactions", "total engagement"]
+  hashtags:     ["hashtags", "tags"]

@@ -1,0 +1,20 @@
+# Thresholds that decide what counts as a "significant" WoW movement worth
+# calling out in the executive summary. Tune these as you learn what's normal
+# noise vs. a real signal for this competitor set.
+#
+# - pct_change_flag: flag when |week-over-week % change| >= this value
+# - abs_change_flag: flag when |week-over-week absolute change| >= this value
+#   (used for count-style metrics where % change is noisy on small numbers)
+
+metrics:
+  followers_total:
+    pct_change_flag: 5
+
+  engagement_rate:
+    pct_change_flag: 20
+
+  engagement_total:
+    pct_change_flag: 25
+
+  posts_count:
+    abs_change_flag: 3

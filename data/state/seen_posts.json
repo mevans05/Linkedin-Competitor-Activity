@@ -1,0 +1,54 @@
+{
+  "company:accenture": [
+    "acn-001",
+    "acn-002"
+  ],
+  "company:deloitte": [
+    "del-001",
+    "del-002"
+  ],
+  "company:mckinsey": [
+    "mck-001"
+  ],
+  "company:adswerve": [
+    "adw-001",
+    "adw-002"
+  ],
+  "company:slalom-consulting": [
+    "slc-001"
+  ],
+  "leader:brad-jackson": [
+    "brad-001",
+    "brad-002"
+  ],
+  "leader:tom-zawacki": [
+    "tom-001"
+  ],
+  "leader:jason-girzadas": [
+    "jason-001"
+  ],
+  "company:kpmg": [
+    "kpmg-001"
+  ],
+  "company:pwc": [
+    "pwc-001"
+  ],
+  "company:insight-enterprises": [
+    "insight-001"
+  ],
+  "company:apply-digital": [
+    "apply-001"
+  ],
+  "leader:ali-alkhafaji": [
+    "ali-001"
+  ],
+  "leader:john-f-walsh": [
+    "johnwalsh-001"
+  ],
+  "leader:tim-walsh": [
+    "timwalsh-001"
+  ],
+  "leader:javier-arenas": [
+    "javier-001"
+  ]
+}

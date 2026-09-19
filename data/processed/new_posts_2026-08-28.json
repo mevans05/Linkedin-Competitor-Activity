@@ -1,0 +1,70 @@
+{
+  "week_ending": "2026-08-28",
+  "new_posts": {
+    "company_pages": {
+      "adswerve": [
+        {
+          "post_id": "https://www.linkedin.com/posts/adswerve-inc-_ga4-server-side-tagging-activity-7500000000000000001-a1b2",
+          "url": "https://www.linkedin.com/posts/adswerve-inc-_ga4-server-side-tagging-activity-7500000000000000001-a1b2",
+          "date_posted": null,
+          "post_type": "Video",
+          "content_text": "We broke down the exact GA4 + server-side tagging setup that cut a client's data loss by 40%. Full walkthrough of the container config, consent gating, and validation steps inside. [VD: A diagram shows the server-side tagging architecture from browser to first-party server to GA4.]",
+          "likes": null,
+          "comments": null,
+          "shares": null,
+          "reactions_total": null,
+          "hashtags": null,
+          "cta": "Link to blog walkthrough"
+        }
+      ],
+      "deloitte": [
+        {
+          "post_id": "https://www.linkedin.com/posts/deloitte_agentic-ai-enterprise-workflows-activity-7500000000000000002-c3d4",
+          "url": "https://www.linkedin.com/posts/deloitte_agentic-ai-enterprise-workflows-activity-7500000000000000002-c3d4",
+          "date_posted": null,
+          "post_type": "Document",
+          "content_text": "Inside Deloitte's approach to agentic AI in enterprise workflows. Our latest point of view on where autonomous agents create real operating leverage \u2014 and where human oversight still has to sit.",
+          "likes": null,
+          "comments": null,
+          "shares": null,
+          "reactions_total": null,
+          "hashtags": null,
+          "cta": "Download the point of view"
+        }
+      ]
+    },
+    "leadership_profiles": {
+      "brad-jackson": [
+        {
+          "post_id": "https://www.linkedin.com/posts/bradjackson-slalom_consulting-activity-7500000000000000003-e5f6",
+          "url": "https://www.linkedin.com/posts/bradjackson-slalom_consulting-activity-7500000000000000003-e5f6",
+          "date_posted": null,
+          "post_type": "Text",
+          "content_text": "The best consultants I know ask better questions, not give faster answers.",
+          "likes": null,
+          "comments": null,
+          "shares": null,
+          "reactions_total": null,
+          "hashtags": null,
+          "cta": NaN
+        }
+      ],
+      "john-f-walsh": [
+        {
+          "post_id": "https://www.linkedin.com/posts/john-f-walsh_transformation-activity-7500000000000000004-g7h8",
+          "url": "https://www.linkedin.com/posts/john-f-walsh_transformation-activity-7500000000000000004-g7h8",
+          "date_posted": null,
+          "post_type": "Text",
+          "content_text": "Every transformation program fails for the same three reasons. None of them are technology.",
+          "likes": null,
+          "comments": null,
+          "shares": null,
+          "reactions_total": null,
+          "hashtags": null,
+          "cta": NaN
+        }
+      ]
+    }
+  },
+  "total_new_posts": 4
+}

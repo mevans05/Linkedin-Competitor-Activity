@@ -1,0 +1,21 @@
+{
+  "company:accenture": [
+    "https://www.linkedin.com/feed/update/urn:li:activity:7478446722139168768?updateEntityUrn=urn%3Ali%3Afs_updateV2%3A%28urn%3Ali%3Aactivity%3A7478446722139168768%2CFEED_DETAIL%2CEMPTY%2CDEFAULT%2Cfalse%29",
+    "https://www.linkedin.com/feed/update/urn:li:activity:7483490226481516544?updateEntityUrn=urn%3Ali%3Afs_updateV2%3A%28urn%3Ali%3Aactivity%3A7483490226481516544%2CFEED_DETAIL%2CEMPTY%2CDEFAULT%2Cfalse%29",
+    "https://www.linkedin.com/feed/update/urn:li:activity:7486061262494269440?updateEntityUrn=urn%3Ali%3Afs_updateV2%3A%28urn%3Ali%3Aactivity%3A7486061262494269440%2CFEED_DETAIL%2CEMPTY%2CDEFAULT%2Cfalse%29",
+    "https://www.linkedin.com/feed/update/urn:li:activity:7487854376623955969?updateEntityUrn=urn%3Ali%3Afs_updateV2%3A%28urn%3Ali%3Aactivity%3A7487854376623955969%2CFEED_DETAIL%2CEMPTY%2CDEFAULT%2Cfalse%29",
+    "https://www.linkedin.com/posts/accenture_generativeai-activity-7131309949313257473-ssm2?utm_source=share&utm_medium=member_desktop&rcm=ACoAAAA401wBZq3cEgt4b7G7h0QsQwp81bbk6pA"
+  ],
+  "company:adswerve": [
+    "https://www.linkedin.com/posts/adswerve-inc-_ga4-server-side-tagging-activity-7500000000000000001-a1b2"
+  ],
+  "company:deloitte": [
+    "https://www.linkedin.com/posts/deloitte_agentic-ai-enterprise-workflows-activity-7500000000000000002-c3d4"
+  ],
+  "leader:brad-jackson": [
+    "https://www.linkedin.com/posts/bradjackson-slalom_consulting-activity-7500000000000000003-e5f6"
+  ],
+  "leader:john-f-walsh": [
+    "https://www.linkedin.com/posts/john-f-walsh_transformation-activity-7500000000000000004-g7h8"
+  ]
+}

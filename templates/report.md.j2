@@ -1,0 +1,109 @@
+# Weekly LinkedIn Competitor Audit — Week Ending {{ week_ending }}
+
+*Generated {{ generated_at }} · Tracking {{ n_companies }} Company Pages and {{ n_leaders }} leadership profiles · {{ total_new_posts }} net-new post(s) indexed this week*
+
+## Executive Summary
+
+<!-- QUALITATIVE:EXEC_SUMMARY -->
+_TODO (Claude): Write a 3-6 bullet week-over-week narrative summary. Reference
+the Significant Movements table below by name, and speculate on the likely
+driver for each notable move (tie speculation to specific posts in the Net
+New Content section where possible — e.g. "likely driven by the viral
+[topic] carousel post on [date]")._
+<!-- /QUALITATIVE:EXEC_SUMMARY -->
+
+## Quantitative Snapshot — Company Pages
+
+*Values are this week's period count; parentheses show WoW change vs. the prior period.{% if has_self_page %} Zilker Trail's own page is included (bolded, marked "You") as a reference point.{% endif %}*
+
+| Company | New Followers | Reactions | Comments | Posts |
+|---|---:|---:|---:|---:|
+{% for row in company_rows -%}
+| {{ row.name }} | {{ row.new_followers }} | {{ row.reactions }} | {{ row.comments }} | {{ row.posts_count }} |
+{% endfor %}
+
+### Significant Movements This Week
+
+{% if flagged_changes -%}
+{% for f in flagged_changes -%}
+- **{{ f.company_name }}** — {{ f.metric_label }}: {{ f.prior_fmt }} → {{ f.current_fmt }} ({{ f.change_fmt }})
+{% endfor -%}
+{% else -%}
+_No changes cleared the significance thresholds configured in `config/thresholds.yaml` this week._
+{% endif %}
+
+## Net New Content This Week
+
+### Company Pages
+
+{% for group in company_post_groups -%}
+#### {{ group.name }} ({{ group.count }} new post{{ '' if group.count == 1 else 's' }})
+
+{% if group.posts -%}
+{% for p in group.posts -%}
+- {% if p.date %}**{{ p.date }}** {% endif %}[{{ p.type }}] {{ p.excerpt }}{% if p.has_engagement %} — 👍 {{ p.likes }} · 💬 {{ p.comments }} · 🔁 {{ p.shares }}{% endif %}{% if p.cta %} — _CTA: {{ p.cta }}_{% endif %}{% if p.url %} — [link]({{ p.url }}){% endif +%}
+
+{% endfor %}
+{% else -%}
+_No net-new posts indexed this week._
+
+{% endif %}
+{% endfor %}
+### Leadership Profiles
+
+{% for group in leader_post_groups -%}
+#### {{ group.name }}{% if group.company %} ({{ group.company }}){% endif %} — {{ group.count }} new post{{ '' if group.count == 1 else 's' }}
+
+{% if group.posts -%}
+{% for p in group.posts -%}
+- {% if p.date %}**{{ p.date }}** {% endif %}[{{ p.type }}] {{ p.excerpt }}{% if p.has_engagement %} — 👍 {{ p.likes }} · 💬 {{ p.comments }} · 🔁 {{ p.shares }}{% endif %}{% if p.cta %} — _CTA: {{ p.cta }}_{% endif %}{% if p.url %} — [link]({{ p.url }}){% endif +%}
+
+{% endfor %}
+{% else -%}
+_No net-new posts indexed this week._
+
+{% endif %}
+{% endfor %}
+## Qualitative Analysis
+
+### By Brand
+
+<!-- QUALITATIVE:BY_BRAND -->
+_TODO (Claude): One subsection per company that posted this week
+(`#### Company Name`). Summarize the topics/themes and formats used, and note
+how Zilker Trail might approach the same subject, or where Zilker Trail's POV
+would differ. Ground this in the actual post excerpts above, not generic
+industry commentary._
+<!-- /QUALITATIVE:BY_BRAND -->
+
+### By Leader
+
+<!-- QUALITATIVE:BY_LEADER -->
+_TODO (Claude): One subsection per leader who posted this week
+(`#### Leader Name`). Same treatment as the brand sections above — themes,
+formats, and Zilker Trail's potential angle or disagreement._
+<!-- /QUALITATIVE:BY_LEADER -->
+
+## Content Themes & Formats — Cross-Competitor Patterns
+
+<!-- QUALITATIVE:CROSS_PATTERNS -->
+_TODO (Claude): Synthesize recurring themes, format mix trends (video vs.
+carousel/document vs. text vs. poll), and any notable tone shifts across the
+whole competitor set this week — patterns that span multiple competitors,
+not single-brand observations already covered above._
+<!-- /QUALITATIVE:CROSS_PATTERNS -->
+
+## Zilker Trail POV & Opportunities
+
+<!-- QUALITATIVE:ZT_POV -->
+_TODO (Claude): Concrete, specific angles where Zilker Trail could publish a
+POV this week — where to agree and add value, where to differentiate, and
+where to openly disagree with a competitor's take. Ground this in
+`config/zilker_trail.md` positioning, not generic advice._
+<!-- /QUALITATIVE:ZT_POV -->
+
+---
+*Analytics sourced via Coefficient (LinkedIn competitor comparison table).
+Post content sourced via manual weekly export. Significance thresholds
+configurable in `config/thresholds.yaml`. Competitor roster in
+`config/competitors.yaml`.*

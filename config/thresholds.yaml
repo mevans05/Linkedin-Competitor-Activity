@@ -1,0 +1,25 @@
+# Thresholds that decide what counts as a "significant" WoW movement worth
+# calling out in the executive summary. Tune these as you learn what's normal
+# noise vs. a real signal for this competitor set.
+#
+# Metrics match the real Coefficient competitor comparison table: New
+# Followers, Posts, Comments, and Reactions are all period counts (per
+# 7-day window), not cumulative totals — so a "significant" move here means
+# an unusually active or unusually quiet week, not a change in overall size.
+#
+# - pct_change_flag: flag when |week-over-week % change| >= this value
+# - abs_change_flag: flag when |week-over-week absolute change| >= this value
+#   (used for count-style metrics where % change is noisy on small numbers)
+
+metrics:
+  new_followers:
+    pct_change_flag: 30
+
+  reactions_total:
+    pct_change_flag: 25
+
+  comments_total:
+    pct_change_flag: 30
+
+  posts_count:
+    abs_change_flag: 3

@@ -1,0 +1,35 @@
+# Maps the canonical field names this pipeline uses internally to the
+# possible column headers a raw export might use. When you connect the real
+# Coefficient sync, check the header row of the export against these lists —
+# if a column doesn't match, either rename it in the sheet/export, or add the
+# actual header text here as another alias. Matching is case-insensitive and
+# ignores surrounding whitespace.
+
+# Matches the real Coefficient "LinkedIn Pages Import" competitor comparison
+# table: Page | New Followers | Posts | Comments | Comments per day |
+# Reactions, for a configurable period (set the underlying LinkedIn Analytics
+# comparison window to 7 days before each weekly sync so this is a clean
+# week, not a rolling 30-day number).
+analytics:
+  company:          ["company", "page name", "page", "organization", "competitor"]
+  date:             ["date", "week", "week ending", "snapshot date", "period end", "end date"]
+  new_followers:    ["new_followers", "new followers", "follower growth", "net new followers"]
+  posts_count:      ["posts_count", "posts", "post count", "posts published"]
+  comments_total:   ["comments_total", "comments", "comment count"]
+  comments_per_day: ["comments_per_day", "comments per day"]
+  reactions_total:  ["reactions_total", "reactions", "total reactions"]
+
+posts:
+  post_id:      ["post_id", "post id", "id", "activity id", "urn"]
+  url:          ["url", "post url", "link", "permalink"]
+  author_type:  ["author_type", "type", "source type"]
+  author_name:  ["author_name", "author", "company", "profile", "name"]
+  date_posted:  ["date_posted", "date", "published date", "post date", "created date"]
+  post_type:    ["post_type", "content type", "format", "media type"]
+  content_text: ["content_text", "content", "text", "caption", "body"]
+  likes:        ["likes", "reactions"]
+  comments:     ["comments", "comment count"]
+  shares:       ["shares", "reposts", "share count"]
+  reactions_total: ["reactions_total", "total reactions", "total engagement"]
+  hashtags:     ["hashtags", "tags"]
+  cta:          ["cta", "call to action", "call-to-action"]

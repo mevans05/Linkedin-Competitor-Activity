@@ -30,7 +30,6 @@ def main():
     competitors = c.load_competitors()
     mappings = c.load_column_mappings()["analytics"]
     lookup = c.build_company_lookup(competitors)
-    self_page_names = c.build_self_page_names(competitors)
 
     manifest_path = c.STATE_DIR / "ingested_analytics_files.json"
     ingested = set(c.load_json(manifest_path, []))
@@ -76,8 +75,6 @@ def main():
 
         for _, row in df.iterrows():
             company_raw = str(row["company"]).strip()
-            if company_raw.lower() in self_page_names:
-                continue  # Zilker Trail's own row in the comparison table
             key = lookup.get(company_raw.lower())
             if key is None:
                 unmatched.add(company_raw)

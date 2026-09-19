@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
-"""Compute week-over-week analytics deltas for tracked competitor Company Pages.
+"""Compute week-over-week analytics deltas for tracked competitor Company
+Pages, plus Zilker Trail's own page for direct comparison.
 
 Loads data/processed/analytics_history.csv, compares the target week's
 snapshot against each company's immediately preceding snapshot, computes
@@ -54,7 +55,7 @@ def main():
     companies = {}
     flagged_changes = []
 
-    for entry in competitors["company_pages"]:
+    for entry in c.all_company_entries(competitors):
         key = entry["key"]
         rows = history[history["company_key"] == key].sort_values("date")
         current_rows = rows[rows["date"] == target_date]
@@ -100,6 +101,7 @@ def main():
                 flagged_changes.append({
                     "company_key": key,
                     "company_name": entry["linkedin_name"],
+                    "is_self": entry["is_self"],
                     "metric": metric,
                     "prior": prior_val,
                     "current": cur_val,
@@ -109,6 +111,7 @@ def main():
 
         companies[key] = {
             "company_name": entry["linkedin_name"],
+            "is_self": entry["is_self"],
             "prior_date": prior["date"].date().isoformat() if prior is not None else None,
             "metrics": metrics,
         }

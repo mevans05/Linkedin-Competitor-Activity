@@ -84,7 +84,7 @@ columns or add the real header text as a new alias in that file.
 
 | Canonical field | Source column | Meaning |
 |---|---|---|
-| `company` | Page | Must match a `linkedin_name`, `key`, or `aliases` entry in `config/competitors.yaml`. Zilker Trail's own row (it's a self-vs-competitor table) is skipped automatically via `self_page_aliases` in that file. |
+| `company` | Page | Must match a `linkedin_name`, `key`, or `aliases` entry in `config/competitors.yaml` — including Zilker Trail's own row via `self_page` in that file, which is tracked (not skipped) so it shows up as a labeled reference row in the report. |
 | `date` | *(none — derived from filename)* | Optional column; if absent, the period-end date is parsed from the filename (`2026-09-04.csv`). |
 | `new_followers` | New Followers | New followers this period |
 | `posts_count` | Posts | Posts published this period |
@@ -153,10 +153,13 @@ showing last week's post) won't be double-counted or re-reported.
 - `config/competitors.yaml` — the tracked Company Pages and leadership
   profiles, plus `aliases` for alternate names seen in real exports (e.g.
   the Coefficient table uses "APPLY" and "Insight" rather than full page
-  names) and `self_page_aliases` for Zilker Trail's own name(s) so its row
-  in the comparison table is skipped rather than flagged as unmatched. The
-  `key` for each entry must stay stable over time (it's the join key across
-  all historical data) even if the display name changes.
+  names) and a `self_page` entry for Zilker Trail's own page. `self_page` is
+  tracked through the same WoW pipeline as any competitor — it shows up as a
+  bolded "(You)" reference row in the Quantitative Snapshot table and can
+  appear in Significant Movements too, so your own analytics sit right
+  alongside competitors' each week. The `key` for each entry (competitor or
+  self) must stay stable over time (it's the join key across all historical
+  data) even if the display name changes.
 - `config/thresholds.yaml` — what counts as a "significant" WoW change per
   metric. Tune these once you've seen a few weeks of normal variance for
   this competitor set.

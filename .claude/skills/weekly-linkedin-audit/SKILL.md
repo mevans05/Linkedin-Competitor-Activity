@@ -87,7 +87,11 @@ fabricate data or run the pipeline on a partial week.
      movement from the Significant Movements table must be named with
      specific speculation on why (tie to a specific new post when the post
      data supports it — don't speculate generically when there's a post that
-     obviously explains the number).
+     obviously explains the number). If `config/competitors.yaml` has a
+     `self_page` configured, Zilker Trail's own row appears in the
+     Quantitative Snapshot table labeled "(You)" — call out how ZT's own
+     week compares to the competitor set (ahead/behind/in line), not just
+     competitor moves in isolation.
    - **By Brand**: one subsection per company that has new posts this week
      (skip companies with zero — no need to write "nothing happened").
      Topics/themes/format used, and how Zilker Trail might approach the

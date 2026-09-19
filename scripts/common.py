@@ -173,10 +173,31 @@ def slugify(name):
     return re.sub(r"[^a-z0-9]+", "-", str(name).lower()).strip("-")
 
 
-def build_company_lookup(competitors):
-    """Map normalized company name/key/alias -> canonical company key."""
-    lookup = {}
+def get_self_page(competitors):
+    """Zilker Trail's own tracked company page entry, or None if not
+    configured in competitors.yaml."""
+    return competitors.get("self_page")
+
+
+def all_company_entries(competitors):
+    """Competitor company pages plus Zilker Trail's own page (if configured),
+    self page first. Each entry carries an `is_self` bool so callers can
+    distinguish it without a separate lookup."""
+    entries = []
+    self_page = get_self_page(competitors)
+    if self_page:
+        entries.append({**self_page, "is_self": True})
     for entry in competitors["company_pages"]:
+        entries.append({**entry, "is_self": False})
+    return entries
+
+
+def build_company_lookup(competitors):
+    """Map normalized company name/key/alias -> canonical company key.
+    Includes Zilker Trail's own page so its analytics resolve like any
+    competitor's rather than needing separate self-page handling."""
+    lookup = {}
+    for entry in all_company_entries(competitors):
         lookup[entry["key"].strip().lower()] = entry["key"]
         lookup[entry["linkedin_name"].strip().lower()] = entry["key"]
         for alias in entry.get("aliases", []):
@@ -195,14 +216,8 @@ def build_leader_lookup(competitors):
     return lookup
 
 
-def build_self_page_names(competitors):
-    """Normalized set of names for Zilker Trail's own page, to skip silently
-    when it shows up as a row in a self-vs-competitor comparison export."""
-    return {name.strip().lower() for name in competitors.get("self_page_aliases", [])}
-
-
 def company_display_name(competitors, key):
-    for entry in competitors["company_pages"]:
+    for entry in all_company_entries(competitors):
         if entry["key"] == key:
             return entry["linkedin_name"]
     return key

@@ -1,8 +1,51 @@
 {
   "week_ending": "2026-08-28",
   "companies": {
+    "zilker-trail": {
+      "company_name": "Zilker Trail Consulting",
+      "is_self": true,
+      "prior_date": "2026-08-21",
+      "metrics": {
+        "new_followers": {
+          "prior": 27,
+          "current": 35,
+          "abs_change": 8,
+          "pct_change": 29.629629629629626,
+          "flagged": false
+        },
+        "reactions_total": {
+          "prior": 413,
+          "current": 450,
+          "abs_change": 37,
+          "pct_change": 8.958837772397095,
+          "flagged": false
+        },
+        "comments_total": {
+          "prior": 9,
+          "current": 11,
+          "abs_change": 2,
+          "pct_change": 22.22222222222222,
+          "flagged": false
+        },
+        "posts_count": {
+          "prior": 6,
+          "current": 7,
+          "abs_change": 1,
+          "pct_change": null,
+          "flagged": false
+        },
+        "comments_per_day": {
+          "prior": 0.0,
+          "current": 1.6,
+          "abs_change": 1.6,
+          "pct_change": null,
+          "flagged": false
+        }
+      }
+    },
     "accenture": {
       "company_name": "Accenture",
+      "is_self": false,
       "prior_date": "2026-08-21",
       "metrics": {
         "new_followers": {
@@ -44,6 +87,7 @@
     },
     "slalom-consulting": {
       "company_name": "Slalom Consulting",
+      "is_self": false,
       "prior_date": "2026-08-21",
       "metrics": {
         "new_followers": {
@@ -85,6 +129,7 @@
     },
     "deloitte": {
       "company_name": "Deloitte",
+      "is_self": false,
       "prior_date": "2026-08-21",
       "metrics": {
         "new_followers": {
@@ -126,6 +171,7 @@
     },
     "kpmg": {
       "company_name": "KPMG",
+      "is_self": false,
       "prior_date": "2026-08-21",
       "metrics": {
         "new_followers": {
@@ -167,6 +213,7 @@
     },
     "pwc": {
       "company_name": "PwC",
+      "is_self": false,
       "prior_date": "2026-08-21",
       "metrics": {
         "new_followers": {
@@ -208,6 +255,7 @@
     },
     "mckinsey": {
       "company_name": "McKinsey & Company",
+      "is_self": false,
       "prior_date": "2026-08-21",
       "metrics": {
         "new_followers": {
@@ -249,6 +297,7 @@
     },
     "apply-digital": {
       "company_name": "Apply Digital",
+      "is_self": false,
       "prior_date": "2026-08-21",
       "metrics": {
         "new_followers": {
@@ -290,6 +339,7 @@
     },
     "adswerve": {
       "company_name": "Adswerve",
+      "is_self": false,
       "prior_date": "2026-08-21",
       "metrics": {
         "new_followers": {
@@ -331,6 +381,7 @@
     },
     "insight-enterprises": {
       "company_name": "Insight Enterprises",
+      "is_self": false,
       "prior_date": "2026-08-21",
       "metrics": {
         "new_followers": {
@@ -375,6 +426,7 @@
     {
       "company_key": "adswerve",
       "company_name": "Adswerve",
+      "is_self": false,
       "metric": "comments_total",
       "prior": 4,
       "current": 85,
@@ -384,6 +436,7 @@
     {
       "company_key": "adswerve",
       "company_name": "Adswerve",
+      "is_self": false,
       "metric": "reactions_total",
       "prior": 265,
       "current": 3800,
@@ -393,6 +446,7 @@
     {
       "company_key": "adswerve",
       "company_name": "Adswerve",
+      "is_self": false,
       "metric": "new_followers",
       "prior": 61,
       "current": 410,

@@ -66,12 +66,21 @@ def fmt_cell(current, pct_change=None, abs_change=None):
     return base
 
 
+def display_label(name, is_self):
+    """Plain-text label — callers add their own markdown emphasis, since some
+    call sites (the Significant Movements line) already bold the name
+    themselves and doubling up on ** breaks the markdown."""
+    return f"{name} (You)" if is_self else name
+
+
 def build_company_rows(companies, competitors):
     rows = []
-    order = [e["key"] for e in competitors["company_pages"]]
-    for key in order:
+    for entry in c.all_company_entries(competitors):
+        key = entry["key"]
         comp = companies.get(key)
-        name = c.company_display_name(competitors, key)
+        name = display_label(entry["linkedin_name"], entry["is_self"])
+        if entry["is_self"]:
+            name = f"**{name}**"  # not otherwise bolded in the quant table
         if comp is None:
             rows.append({"name": name, "new_followers": "—", "reactions": "—", "comments": "—", "posts_count": "—"})
             continue
@@ -97,7 +106,7 @@ def build_flagged(flagged_changes):
         else:
             change_fmt = fmt_num(f["abs_change"], signed=True) + " WoW"
         out.append({
-            "company_name": f["company_name"],
+            "company_name": display_label(f["company_name"], f.get("is_self", False)),
             "metric_label": METRIC_LABELS.get(metric, metric),
             "prior_fmt": prior_fmt,
             "current_fmt": current_fmt,
@@ -171,6 +180,7 @@ def main():
         generated_at=datetime.now(timezone.utc).strftime("%Y-%m-%d %H:%M UTC"),
         n_companies=len(competitors["company_pages"]),
         n_leaders=len(competitors["leadership_profiles"]),
+        has_self_page=c.get_self_page(competitors) is not None,
         total_new_posts=posts.get("total_new_posts", 0),
         company_rows=company_rows,
         flagged_changes=flagged_changes,

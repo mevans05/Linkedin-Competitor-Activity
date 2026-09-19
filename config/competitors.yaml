@@ -10,13 +10,16 @@
 # add whatever variant you see in a real export here rather than renaming
 # `linkedin_name`.
 
-# Zilker Trail's own page appears as a row in the Coefficient competitor
-# comparison table (it's a self-vs-competitor comparison view). List the
-# name(s) it appears under here so ingest scripts skip it silently instead of
-# warning about an unmatched company.
-self_page_aliases:
-  - Zilker Trail Consulting
-  - Zilker Trail
+# Zilker Trail's own page. It appears as a row in the Coefficient competitor
+# comparison table (it's a self-vs-competitor comparison view) — tracked here
+# (rather than skipped) so its own analytics run through the same WoW
+# pipeline and show up as a labeled reference row alongside competitors in
+# the weekly report, for direct comparison.
+self_page:
+  key: zilker-trail
+  linkedin_name: Zilker Trail Consulting
+  url: https://www.linkedin.com/company/zilker-trail-consulting/
+  aliases: [Zilker Trail]
 
 company_pages:
   - key: accenture

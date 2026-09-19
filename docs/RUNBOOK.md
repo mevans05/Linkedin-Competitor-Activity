@@ -55,6 +55,30 @@ correct). Qualitative analysis is written by Claude each week via the
    before sharing externally — treat the qualitative sections as a strong
    first draft, not final copy.
 
+## Automated Monday Slack digest
+
+A Routine ("Weekly LinkedIn Competitor Audit Digest", `trig_01MfejKiTZnnum3er2KbAgZu`)
+fires every Monday at 8:00am America/New_York, bound to this project's
+Claude Code session (same pattern as the account's other weekly digests —
+Slack access here comes from the session itself, not a per-Routine
+connector grant). Each Monday it:
+
+- Checks `data/raw/analytics/` and `data/raw/posts/` for that week's inputs.
+- **If both are ready**: runs the full pipeline above, writes the
+  qualitative sections, **commits and pushes the report to
+  `claude/linkedin-competitor-audit-lqtkdy` automatically**, publishes/updates
+  the HTML artifact, and sends a Slack DM digest (executive summary +
+  significant movements + links to the full report) to the account owner.
+- **If either input is missing**: sends a Slack DM reminder naming exactly
+  what's needed, instead of fabricating a report or committing anything.
+
+This means the weekly inputs (the Coefficient export and the pasted post
+digest) need to land in the repo *before* Monday morning to get a real
+digest that week — otherwise Monday's message is just a reminder. Manage
+the Routine (pause, change schedule, view run history) via
+`mcp__Claude_Code_Remote__list_triggers` / `update_trigger` /
+`delete_trigger`, or the claude.ai Routines UI.
+
 ## Running the pipeline manually
 
 ```bash
